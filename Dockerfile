@@ -6,7 +6,6 @@ LABEL org.opencontainers.image.licenses="MIT"
 
 RUN  dnf -y --setopt=install_weak_deps=False upgrade && \
 	dnf -y --setopt=install_weak_deps=False install wget glibc-langpack-en procps-ng ca-certificates && \
-	localedef -i en_US -f UTF-8 en_US.UTF-8 && \
 	dnf -y reinstall ca-certificates && \
 	dnf clean all && \
 	rm -rf /var/cache/dnf
